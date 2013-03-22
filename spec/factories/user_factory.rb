@@ -14,23 +14,26 @@
 
 FactoryGirl.define do
   factory :generic_user, class: User do
-    username              'generic'
+    name                  'Sawyer'
     email                 'generic@gmail.com'
     password              'a'
     password_confirmation 'a'
+    funfact               'Son of a bitch!'
   end
 
   factory :regular_user, class: User do
-    username              'regular'
+    name                  'Sayid'
     email                 'regular@gmail.com'
     password              'a'
     password_confirmation 'a'
+    funfact               'hes a pimp Iraqi of the Republican Guard!'
   end
 
   factory :admin_user, class: User do
-    username              'admin'
+    name                  'Jacob'
     email                 'admin@gmail.com'
     password              'a'
     password_confirmation 'a'
+    funfact               'hes watching you sleep...'
   end
 end
