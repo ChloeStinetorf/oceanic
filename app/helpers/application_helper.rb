@@ -8,8 +8,7 @@ module ApplicationHelper
     end
     if @auth.present? && !@auth.is_admin?
        nav += "<li>#{link_to('Search', '#', :class => 'button radius alert')}<li>"
-    end
-
+     end
     if @auth.present?
       nav += "<li>#{link_to(@auth.email, '/login', :method => :delete, :remote => true, :class => 'button radius alert')}<li>"
     else
