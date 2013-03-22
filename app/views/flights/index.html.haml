@@ -1,8 +1,3 @@
 .row
   .small-8.small-centered.columns
-    -if @auth.present? && @auth.is_admin
-      #addflight
-        =link_to('Add Flight', new_flight_path, :remote => true, :class => 'button tiny success')
-    #flight_form
-    #flights
-      = render :partial => "flights"
+    = render :partial => "flights"

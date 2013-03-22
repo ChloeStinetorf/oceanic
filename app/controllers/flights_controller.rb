@@ -1,7 +1,7 @@
 class FlightsController < ApplicationController
 
   def index
-    @flights = Flight.all
+    @flights = Flight.order(:date)
   end
 
 
@@ -16,7 +16,7 @@ class FlightsController < ApplicationController
     @flight.plane = Plane.find(params[:plane])
     @flight.save
     @flight.create_seats
-    @flights = Flight.all
+    @flights = Flight.order(:date)
   end
 
   def show
