@@ -1,0 +1,12 @@
+.row
+  .small-12.columns
+    %h2 Oceanic Airlines
+
+
+.row
+  .small-8.small-centered.columns
+    #addflight
+      =link_to('Add Flight', new_flight_path, :remote => true, :class => 'button tiny success')
+    #form
+    #flights
+      = render :partial => "flights"

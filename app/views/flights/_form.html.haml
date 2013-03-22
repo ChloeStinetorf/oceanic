@@ -1,0 +1,16 @@
+.row
+  .large-4.small-centered.columns
+    = form_for @flight, :remote => true do |f|
+      = f.label :name
+      = f.text_field :name, :autofocus => true
+      = f.label :date
+      = f.text_field :date
+      = f.label :origin
+      = f.text_field :origin
+      = f.label :destination
+      = f.text_field :destination
+      = f.label :plane
+      = select_tag(:plane, options_from_collection_for_select(@planes, "id", "name"))
+      = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button tiny radius alert')
+      = f.submit 'Create Flight', :class => 'button tiny radius success'
+  .large-9.columns
