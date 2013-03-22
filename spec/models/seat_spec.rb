@@ -11,7 +11,7 @@ describe Seat do
 
   describe '#user' do
     it 'belongs to a user' do
-      user= FactoryGirl.create(:regular_user)
+      user= FactoryGirl.create(:user)
       seat = FactoryGirl.create(:seat)
       seat.user = user
       expect(seat.user).to eq user
@@ -29,8 +29,8 @@ describe Seat do
 
   describe '#flight' do
     it 'belongs to a flight' do
-      plane = FactoryGirl.create(:flight)
-      seat = FactoryGirl.create(:flight)
+      flight = FactoryGirl.create(:flight)
+      seat = FactoryGirl.create(:seat)
       seat.flight = flight
       expect(seat.flight).to eq flight
       end
