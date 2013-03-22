@@ -10,6 +10,7 @@ def new
 
 
 def create
+  @plane = Plane.create(params[:plane])
 end
 
 

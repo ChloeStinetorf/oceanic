@@ -6,13 +6,13 @@ describe "Planes" do
       visit planes_path
       page.should have_link("Add Plane")
     end
-    it "should have a form to build a plane" do
+    it "should have a form to build a plane", :js => true do
       visit planes_path
       click_link("Add Plane")
       page.should have_button("Create Plane")
       page.should have_link("Cancel")
     end
-    it "should be able to cancel the form" do
+    it "should be able to cancel the form", :js => true do
       visit planes_path
       click_link("Add Plane")
       click_link("Cancel")
@@ -21,7 +21,7 @@ describe "Planes" do
   end
 
   describe "POST /planes" do
-    it "should make a new plane" do
+    it "should make a new plane", :js => true do
       visit planes_path
       click_link("Add Plane")
       fill_in("Name", :with => "A 787")
