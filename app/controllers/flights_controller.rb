@@ -15,6 +15,7 @@ class FlightsController < ApplicationController
     @flight = Flight.create(params[:flight])
     @flight.plane = Plane.find(params[:plane])
     @flight.save
+    @flight.create_seats
     @flights = Flight.all
   end
 
