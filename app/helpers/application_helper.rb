@@ -3,8 +3,8 @@ module ApplicationHelper
     nav = ""
 
     if @auth.present? && @auth.is_admin?
-      nav += "<li>#{link_to('Planes', '#', :class => 'button radius alert')}<li>"
-      nav += "<li>#{link_to('Flights', '#', :class => 'button radius alert')}<li>"
+      nav += "<li>#{link_to('Planes', planes_path, :class => 'button radius alert')}<li>"
+      nav += "<li>#{link_to('Flights', flights_path, :class => 'button radius alert')}<li>"
     end
     if @auth.present? && !@auth.is_admin?
        nav += "<li>#{link_to('Search', '#', :class => 'button radius alert')}<li>"

@@ -1,10 +1,18 @@
 Oceanic::Application.routes.draw do
 
-  root :to => 'home#index'
+
+  root :to => 'flights#index'
+  resources :planes, :only => [:index, :new, :create] do
+  end
+
+  resources :flights, :only => [:index, :new, :create, :show] do
+  end
+
   resources :users, :only => [:new, :create]
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
+
 
 end

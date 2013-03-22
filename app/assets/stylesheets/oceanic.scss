@@ -1,3 +1,4 @@
+
 h1
 {
   font-family: "museo-sans",sans-serif;
@@ -5,5 +6,20 @@ h1
   font-size: 86px;
 }
 
+.seat {
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  background: blue;
+  color: white;
+}
 
+#plane_box {
+  width: 500px;
+  max-height: 1000px;
 
+}
+#flight_table {
+  width: 100%;
+  text-align: center;
+}

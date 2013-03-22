@@ -1,0 +1,15 @@
+%table#flight_table
+  %tr
+    %th Date
+    %th Flight
+    %th Origin => Destination
+    %th Plane
+  -@flights.each do |flight|
+    %tr
+      %td= flight.date
+      %td= flight.name
+      %td= "#{flight.origin} => #{flight.destination}"
+      -if flight.plane.present?
+        %td= flight.plane.name
+      -else
+        %td

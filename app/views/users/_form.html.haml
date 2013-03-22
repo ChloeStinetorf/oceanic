@@ -1,19 +1,17 @@
-.row
-  .large-3.columns
-    = form_for @user, :remote => true do |f|
-      = f.label :name
-      = f.text_field :name, :autofocus => true
-      = f.label :email
-      = f.text_field :email
-      = f.label :funfact, 'Fun Fact'
-      = f.text_field :funfact
-      = f.label :password
-      = f.password_field :password
-      = f.label :password_confirmation
-      = f.password_field :password_confirmation
-      = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button radius alert')
-      = f.submit 'Get Lost', :class => 'button radius success'
-  .large-9.columns
+= form_for @user, :remote => true do |f|
+  = f.label :name
+  = f.text_field :name, :autofocus => true
+  = f.label :email
+  = f.text_field :email
+  = f.label :funfact, 'Fun Fact'
+  = f.text_field :funfact
+  = f.label :password
+  = f.password_field :password
+  = f.label :password_confirmation
+  = f.password_field :password_confirmation
+  = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button radius alert')
+  = f.submit 'Get LOST', :class => 'button radius success'
+
 
 
 

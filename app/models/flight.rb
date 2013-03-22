@@ -16,4 +16,12 @@ class Flight < ActiveRecord::Base
   attr_accessible :name, :destination, :origin, :date, :plane_id
   has_many :seats
   belongs_to :plane
+
+  def create_seats
+    binding.pry
+    num_seats = self.plane.aisles * self.plane.rows
+    num_seats.times do |x|
+      Seat.create(flight_id:self.id, plane_id:self.plane.id)
+    end
+  end
 end

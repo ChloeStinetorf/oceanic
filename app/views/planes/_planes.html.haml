@@ -1,0 +1,14 @@
+%h1= @plane.name
+#plane_box
+  .row
+    -@plane.aisles.times do |aisle|
+      / -if @plane.rows > 12
+      .small-1.columns
+        -@plane.rows.times do |row|
+          .row
+            .seat= "#{(aisle+65).chr}#{row+1}"
+    %div{:class => "small-#{12-@plane.aisles} columns"}
+
+
+    //Aisles correspond to columns. so 3 aisles and foundations shows 3 colmn div. another 9 column div creates. w/in your 3-column div, in each column you have a row, which corresponds to a seat.
+    //thus you get the seat (which is its own div w/ class .seat) labeled.
