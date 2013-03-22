@@ -1,0 +1,3 @@
+- if @auth.nil?
+  = link_to('Register', new_user_path, :remote => true, :class => 'button radius alert')
+  = link_to('Login', login_path, :remote => true, :class => 'button radius alert')
