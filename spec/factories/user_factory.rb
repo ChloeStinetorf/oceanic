@@ -20,4 +20,13 @@ FactoryGirl.define do
     password_confirmation 'a'
     funfact               'Son of a bitch!'
   end
+
+  factory :admin, class: User do
+    name                  'Sawyer'
+    email                 'generic@gmail.com'
+    password              'a'
+    password_confirmation 'a'
+    funfact               'Son of a bitch!'
+    is_admin               true
+  end
 end
