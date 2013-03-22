@@ -1,0 +1,9 @@
+%h1= @plane.name
+#plane_box
+  .row
+    -@plane.aisles.times do |aisle|
+      .small-1.columns
+        -@plane.rows.times do |row|
+          .row
+            .seat= "#{(aisle+65).chr}#{row}"
+    %div{:class => "small-#{12-@plane.aisles} columns"}
