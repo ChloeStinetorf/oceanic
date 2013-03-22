@@ -13,7 +13,7 @@ describe 'Session' do
     it 'it displays a login form on click', :js => true do
       visit root_path
       click_link('Login')
-      page.should have_button('Login')
+      page.should have_button('Get Lost')
     end
   end
 
@@ -33,10 +33,10 @@ describe 'Session' do
   it 'does not log the user into the system if credentials are incorrect', :js => true do
       visit root_path
       click_link('Login')
-      fill_in('Email', :with => user.email)
+      fill_in('Email', :with => 'generic@gmail.com')
       fill_in('Password', :with => 'b')
-      click_button('Login')
-      page.should have_button('Login')
+      click_link('Login')
+      page.should have_link('Login')
     end
   end
 end

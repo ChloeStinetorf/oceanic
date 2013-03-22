@@ -1,3 +1,9 @@
-- if @auth.nil?
-  = link_to('Register', new_user_path, :remote => true, :class => 'button radius alert')
-  = link_to('Login', login_path, :remote => true, :class => 'button radius alert')
+.row
+  .large-6.columns
+    %h1 Oceanic Airlines
+    - if @auth.nil?
+      = link_to('Register', new_user_path, :remote => true, :class => 'button radius alert')
+      = link_to('Login', login_path, :remote => true, :class => 'button radius alert')
+  #form
+  .large-6.columns
+
