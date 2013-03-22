@@ -1,19 +1,20 @@
 .row
   .large-3.columns
-    = form_for @user, :url => users_path, :remote => true do |f|
-      = label_tag :name
-      = text_field_tag :name, nil, :autofocus => true
-      = label_tag :email
-      = text_field_tag :email
-      = label_tag :faunfact, 'Fun Fact'
-      = text_field_tag :funfact
+    = form_for @user, :remote => true do |f|
+      = f.label :name
+      = f.text_field :name, :autofocus => true
+      = f.label :email
+      = f.text_field :email
+      = f.label :funfact, 'Fun Fact'
+      = f.text_field :funfact
       = f.label :password
       = f.password_field :password
       = f.label :password_confirmation
       = f.password_field :password_confirmation
       = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button radius alert')
-      = submit_tag 'Get Lost', :class => 'button radius success'
+      = f.submit 'Get Lost', :class => 'button radius success'
   .large-9.columns
+
 
 
 
