@@ -7,7 +7,7 @@ module ApplicationHelper
       nav += "<li>#{link_to('Flights', flights_path, :class => 'button tiny')}<li>"
     end
     if @auth.present? && !@auth.is_admin?
-       nav += "<li>#{link_to('Search', search_path, :class => 'button tiny')}<li>"
+       nav += "<li>#{link_to('Search', 'search_path', :class => 'button tiny')}<li>"
      end
 
     if @auth.present?
