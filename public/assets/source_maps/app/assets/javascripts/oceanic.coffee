@@ -9,3 +9,4 @@ class Home
     $('#flight_form').empty()
 
 $(document).ready(Home.document_ready)
+
