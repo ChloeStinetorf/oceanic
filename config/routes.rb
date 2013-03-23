@@ -8,6 +8,10 @@ Oceanic::Application.routes.draw do
   resources :flights, :only => [:index, :new, :create, :show] do
     collection do
       post "purchase"
+      get 'search'
+      post "destinations"
+      post "search_flights"
+
     end
   end
 

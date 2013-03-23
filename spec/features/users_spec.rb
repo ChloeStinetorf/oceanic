@@ -17,8 +17,8 @@ describe 'Users' do
       fill_in('Email', :with => 'bob@gmail.com')
       fill_in('user_password', :with => 'a')
       fill_in('user_password_confirmation', :with => 'a')
-      click_button('Get Lost')
-      page.should_not have_button('Get Lost')
+      click_button('Get LOST')
+      page.should_not have_button('Get LOST')
       expect(User.first.name).to eq 'Bob'
     end
   end
@@ -29,7 +29,7 @@ describe 'Users' do
       visit root_path
       click_link('Register')
       click_link('Cancel')
-      page.should_not have_button('Get Lost')
+      page.should_not have_button('Get LOST')
     end
   end
 end

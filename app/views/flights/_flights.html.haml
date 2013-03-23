@@ -1,6 +1,9 @@
 -if @auth.present? && (@auth.is_admin == true)
   #addflight
     =link_to('Add Flight', new_flight_path, :remote => true, :class => 'button tiny success')
+-if @auth.present? && (@auth.is_admin == false)
+  #searchflight
+    =link_to('Search Flights', search_flights_path, :remote => true, :class => 'button tiny success')
 #flight_form
 #flights
   %table#flight_table

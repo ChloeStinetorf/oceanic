@@ -15,14 +15,14 @@ describe 'Session' do
     it 'it displays a login form on click', :js => true do
       visit root_path
       click_link('Login')
-      page.should have_button('Get Lost')
+      page.should have_button('Get LOST')
     end
   end
 
   describe 'POST /login' do
-    let(:user) {FactoryGirl.create(:user)}
-
     it 'logs the user into the system if the credentials are correct', :js => true do
+      user = FactoryGirl.create(:user)
+      visit root_path
       login_to_system(user)
       page.should_not have_button('Login')
       page.should have_link(user.email)
@@ -45,13 +45,14 @@ describe 'Session' do
   describe 'DELETE /login' do
     it 'logs the user off the system', :js => true do
       user = FactoryGirl.create(:user)
+      visit root_path
       login_to_system(user)
       click_link(user.email)
       page.should_not have_link(user.email)
       page.should have_link('Register')
       page.should_not have_link('Planes')
       page.should_not have_link('Search')
-      page.should_not have_button('Get Lost')
+      page.should_not have_button('Get LOST')
       visit root_path
       page.should_not have_link(user.email)
       page.should have_link('Login')
@@ -65,7 +66,7 @@ describe 'Session' do
       visit root_path
       click_link('Login')
       click_link('Cancel')
-      page.should_not have_button('Get Lost')
+      page.should_not have_button('Get LOST')
     end
   end
 end
