@@ -1,3 +1,11 @@
+
+h1
+{
+  font-family: "museo-sans",sans-serif;
+  font-weight: 200;
+  font-size: 86px;
+}
+
 .seat {
   width: 30px;
   height: 30px;
@@ -6,11 +14,26 @@
   color: white;
 }
 
-#plane_box {
+#plane_box, #show_flight_table {
   overflow: scroll;
 
 }
 #flight_table {
   width: 100%;
   text-align: center;
+}
+
+.taken {
+  background: black;
+  color: white;
+}
+
+.available {
+  background: green;
+  color: white;
+}
+
+.selected {
+  background: yellow;
+  color: black;
 }

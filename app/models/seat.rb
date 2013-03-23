@@ -9,6 +9,7 @@
 #  plane_id   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  is_taken   :boolean          default(FALSE)
 #
 
 class Seat < ActiveRecord::Base

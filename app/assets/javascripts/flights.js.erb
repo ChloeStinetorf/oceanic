@@ -1,0 +1,28 @@
+$(function(){
+
+  $('#show_flight_table').on('click', '.available, .selected', selector);
+  $("#purchase_btn").click(buy_seats);
+
+});
+
+function selector()
+{
+  $(this).toggleClass('selected available');
+
+}
+
+function buy_seats()
+{
+  var selected = $(".selected");
+  selected = _.map(selected, function(x){ return $(x).next().text();});
+  var token = $("input[name=authenticity_token]").val();
+  var fid = $("#fid").text();
+  $.ajax({
+    dataType: 'script',
+    type: "post",
+    url: "/flights/purchase",
+    data: {authenticity_token:token, ids:selected, fid:fid}
+  }).done();
+  return false;
+}
+

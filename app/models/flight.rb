@@ -18,7 +18,6 @@ class Flight < ActiveRecord::Base
   belongs_to :plane
 
   def create_seats
-    binding.pry
     num_seats = self.plane.aisles * self.plane.rows
     num_seats.times do |x|
       Seat.create(flight_id:self.id, plane_id:self.plane.id)

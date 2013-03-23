@@ -1,1 +1,5 @@
-%h3 test page
+%h3= "Flight: #{@flight.name}"
+%h4= "Date: #{@flight.date}"
+%h4= "Itinerary: #{@flight.origin.upcase} => #{@flight.destination.upcase}"
+#seat_plan
+  = render :partial => 'seats'
