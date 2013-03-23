@@ -1,7 +1,7 @@
 module ApplicationHelper
   def login_nav
     nav = ""
-    nav += "<li>#{link_to('Home', root_path, :remote => true, :class => 'button radius alert')}</li>"
+    nav += "<li>#{link_to('Home', flights_path, :class => 'button radius alert')}</li>"
 
     if @auth.present? && @auth.is_admin?
       nav += "<li>#{link_to('Planes', planes_path, :class => 'button radius alert')}<li>"
