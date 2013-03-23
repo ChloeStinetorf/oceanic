@@ -1,15 +1,14 @@
 class FlightsController < ApplicationController
+  before_filter :check_if_admin, :only => [:new, :create]
 
   def index
     @flights = Flight.order(:date)
   end
 
-
   def new
     @flight = Flight.new
     @planes = Plane.all
-    end
-
+  end
 
   def create
     @flight = Flight.create(params[:flight])
@@ -21,9 +20,5 @@ class FlightsController < ApplicationController
 
   def show
   end
-
-
-
-
 
 end
