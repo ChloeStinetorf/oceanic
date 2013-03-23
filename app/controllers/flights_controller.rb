@@ -4,12 +4,10 @@ class FlightsController < ApplicationController
     @flights = Flight.order(:date)
   end
 
-
   def new
     @flight = Flight.new
     @planes = Plane.all
-    end
-
+  end
 
   def create
     @flight = Flight.create(params[:flight])
@@ -20,10 +18,18 @@ class FlightsController < ApplicationController
   end
 
   def show
+    @flight = Flight.find(params[:id])
   end
 
-
-
-
+  def purchase
+    seats = params[:ids]
+    seats.each do |seat|
+      s = Seat.find(seat.to_i)
+      s.is_taken = true
+      s.save
+      @auth.seats << s
+    end
+    @flight = Flight.find(params[:fid])
+  end
 
 end

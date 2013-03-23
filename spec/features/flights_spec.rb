@@ -36,4 +36,5 @@ describe "Flights" do
       page.should have_text("LAX")
     end
   end
+
 end

@@ -6,6 +6,9 @@ Oceanic::Application.routes.draw do
   end
 
   resources :flights, :only => [:index, :new, :create, :show] do
+    collection do
+      post "purchase"
+    end
   end
 
   resources :users, :only => [:new, :create]

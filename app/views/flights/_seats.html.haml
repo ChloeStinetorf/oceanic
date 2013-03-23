@@ -1,0 +1,24 @@
+%h5#num_avialable= "Available seats: #{@flight.seats.select{|x| x.is_taken == false}.count}"
+%h5#num_taken= "Taken seats: #{@flight.seats.select{|x| x.is_taken == true}.count}"
+%h2#fid= @flight.id
+
+
+
+.row
+  .small-12.columns
+    #show_flight_table
+      %table
+        - i=0
+        - seats = @flight.seats.order(:id)
+        -@flight.plane.aisles.times do |aisle|
+          %tr
+            %td= (aisle+65).chr
+            -@flight.plane.rows.times do |row|
+              %td
+                -if seats[i].user.nil?
+                  .available= "Available"
+                -else
+                  .taken= "#{seats[i].user.name}"
+                %div= seats[i].id
+                -i+=1
+    = button_to("Purchase","#", :id => "purchase_btn")
