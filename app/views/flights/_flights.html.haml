@@ -14,7 +14,7 @@
     -@flights.each do |flight|
       %tr
         %td= flight.date
-        %td= flight.name
+        %td= link_to(flight.name, flight_path(flight))
         %td= "#{flight.origin} => #{flight.destination}"
         %td= flight.plane.name
         -if @auth.present? && (@auth.is_admin == true)
