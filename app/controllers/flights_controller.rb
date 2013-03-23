@@ -33,12 +33,12 @@ class FlightsController < ApplicationController
   end
 
   def search
-    @flights = Flight.all
+    @flights = Flight.all.map(&:origin).uniq.map{|origin| Flight.where(:origin => origin).first}
   end
 
   def destinations
     flight = Flight.find(params[:origin])
-    @destinations = Flight.where(origin:flight.origin)
+    @destinations = Flight.where(origin:flight.origin).map(&:destination).uniq.map{|destination| Flight.where(:destination => destination).first}
     @origin = flight
   end
 
