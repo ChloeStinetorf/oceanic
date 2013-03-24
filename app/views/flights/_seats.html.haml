@@ -1,9 +1,6 @@
-%h5#num_avialable= "Available seats: #{@flight.seats.select{|x| x.is_taken == false}.count}"
-%h5#num_taken= "Taken seats: #{@flight.seats.select{|x| x.is_taken == true}.count}"
 %h2#fid= @flight.id
-
-
-
+%span.seats#num_available= "Seats available: #{@flight.seats.select{|x| x.is_taken == false}.count}"
+%span.seats#num_taken= "Seats taken: #{@flight.seats.select{|x| x.is_taken == true}.count}"
 .row
   .small-12.columns
     #show_flight_table
@@ -18,7 +15,7 @@
                 -if seats[i].user.nil?
                   .available= "Available"
                 -else
-                  .taken= "#{seats[i].user.name}"
-                %div= seats[i].id
+                  .taken= "#{seats[i].user.name.split[0]}"
+                %div.seatsids= seats[i].id
                 -i+=1
-    = button_to("Purchase","#", :id => "purchase_btn")
+    = button_to("Purchase","#", :id => "purchase_btn", :class => 'button tiny radius alert')

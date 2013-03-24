@@ -1,5 +1,7 @@
 $(function(){
-  $("#flight_form").on("change", "#origin", get_destinations);
+  $("#flight_whole").on("change", "#origin", get_destinations);
+  $("#flight_whole").on("focus", "#flight_date", get_date);
+
 });
 
 function get_destinations()
@@ -12,4 +14,9 @@ function get_destinations()
     url: "/flights/destinations",
     data: {authenticity_token:token, origin:oid}
   }).done();
+}
+
+function get_date()
+{
+  $("#flight_date").datepicker({ dateFormat: 'yy-mm-dd' });
 }

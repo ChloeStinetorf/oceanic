@@ -1,7 +1,7 @@
 Oceanic::Application.routes.draw do
 
-
   root :to => 'flights#index'
+
   resources :planes, :only => [:index, :new, :create] do
   end
 
@@ -11,7 +11,6 @@ Oceanic::Application.routes.draw do
       get 'search'
       post "destinations"
       post "search_flights"
-
     end
   end
 

@@ -1,9 +1,5 @@
-.row
-  .large-3.small-centered.columns#search_form
-    = form_tag '/flights/search_flights', :remote => true do
-      / %div= "You have selected #{@origin.origin}. Here are the available destinations:"
-      = hidden_field_tag :origin, @origin.origin
-      = select_tag(:destination, options_from_collection_for_select(@destinations, "id", "destination"))
-      = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button tiny radius alert')
-      = submit_tag 'Search Itinerary', :id => 'searchf', :class => 'button tiny radius success'
-  .large-9.columns
+= form_tag '/flights/search_flights', :remote => true do
+  = hidden_field_tag :origin, @origin.origin
+  = select_tag(:destination, options_from_collection_for_select(@destinations, "id", "destination"), :prompt => "Please select a destination")
+  = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button tiny radius alert form_button')
+  = submit_tag 'Search Itinerary', :id => 'searchf', :class => 'button tiny radius info '

@@ -1,7 +1,7 @@
 $(function(){
 
-  $('#show_flight_table').on('click', '.available, .selected', selector);
-  $("#purchase_btn").click(buy_seats);
+  $('.flight_show_page').on('click', '.available, .selected', selector);
+  $('.flight_show_page').on('click', "#purchase_btn", buy_seats);
 
 });
 
@@ -25,4 +25,6 @@ function buy_seats()
   }).done();
   return false;
 }
+
+
 

@@ -1,12 +1,82 @@
-
-h1
+.headername
 {
   font-family: "museo-sans",sans-serif;
   font-weight: 200;
-  font-size: 86px;
+  font-size: 50px;
+  margin-top: 30px;
 }
 
-.seat {
+h3, h4, h5
+{
+  font-family: "museo-sans",sans-serif;
+}
+
+#show_flight_table
+{
+  margin-top: 30px;
+  margin-bottom: 20px;
+  border: 1px solid #49AFDF;
+  padding: 20px;
+}
+
+#seat_plan
+{
+ margin-bottom: 50px;
+}
+
+.seats
+{
+  font-family: "museo-sans",sans-serif;
+  padding-right: 30px;
+}
+
+.nav-bar
+{
+  padding-top: 42px;
+  font-family: "museo-sans",sans-serif;
+}
+
+#logo
+{
+  position: relative;
+  float: left;
+  padding: 20px;
+  padding-right: 0px;
+}
+
+.destination
+{
+  padding: 20px;
+}
+
+.button
+{
+  font-family: "museo-sans",sans-serif;
+}
+
+#form
+{
+  font-family: "museo-sans",sans-serif;
+  font-size: 18px;
+}
+
+.form_button
+{
+  margin-top: 20px;
+}
+
+#fid
+{
+  display:none;
+}
+
+.seatsids
+{
+  display:none;
+}
+
+.seat
+{
   width: 30px;
   height: 30px;
   margin: 5px;
@@ -14,31 +84,57 @@ h1
   color: white;
 }
 
-#plane_box, #show_flight_table {
+#plane_box, #show_flight_table
+{
   overflow: scroll;
-
 }
-#flight_table {
+
+#flight_table
+{
   width: 100%;
   text-align: center;
 }
 
-.taken {
-  background: black;
-  color: white;
+.button-group
+{
+  width: 500px;
 }
 
-.available {
-  background: green;
+.taken
+{
+  background: #304496;
   color: white;
+  width: 65px;
+  height: 20px;
+  text-align: center;
+  padding-top: 2px;
 }
 
-.selected {
-  background: yellow;
-  color: black;
+.available
+{
+  background: #49AFDF;
+  color: white;
+  cursor: hand;
+  cursor: pointer;
+  width: 65px;
+  height: 20px;
+  text-align: center;
+  padding-top: 2px;
+}
+
+.selected
+{
+  background: #B63C89;
+  color: white;
+  width: 65px;
+  height: 20px;
+  text-align: center;
+  padding-top: 2px;
 }
 
 #drop1 {
-  position: relative;
-  left: -10px;
+  #form {
+    width: 170px;
+  }
 }
+

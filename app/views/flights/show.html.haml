@@ -1,5 +1,9 @@
-%h3= "Flight: #{@flight.name}"
-%h4= "Date: #{@flight.date}"
-%h4= "Itinerary: #{@flight.origin.upcase} => #{@flight.destination.upcase}"
-#seat_plan
-  = render :partial => 'seats'
+-if @auth.present?
+  .flight_show_page
+    %h3= "Flight #{@flight.name}  /  #{@flight.date.strftime("%B %d, %Y")}"
+    %h4= "#{@flight.origin.upcase} to #{@flight.destination.upcase}"
+    #seat_plan
+      = render :partial => 'seats'
+-else
+  %h3 Log in to "purchase" seats on this flight
+

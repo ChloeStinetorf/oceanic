@@ -1,4 +1,6 @@
 class FlightsController < ApplicationController
+  before_filter :check_if_admin, :only => [:new, :create]
+  before_filter :check_if_not_admin, :only => [:purchase, :search]
 
   def index
     @flights = Flight.order(:date)
@@ -10,6 +12,7 @@ class FlightsController < ApplicationController
   end
 
   def create
+    binding.pry
     @flight = Flight.create(params[:flight])
     @flight.plane = Plane.find(params[:plane])
     @flight.save
@@ -38,14 +41,14 @@ class FlightsController < ApplicationController
 
   def destinations
     flight = Flight.find(params[:origin])
-    @destinations = Flight.where(origin:flight.origin).map(&:destination).uniq.map{|destination| Flight.where(:destination => destination).first}
+    @destinations = Flight.where(origin:flight.origin).map(&:destination).uniq.map{|destination| Flight.where(:origin => flight.origin, :destination => destination).first}
     @origin = flight
   end
 
   def search_flights
     origin = params[:origin]
     destination = Flight.find(params[:destination]).destination
-    @flights = Flight.where(origin:origin, destination:destination)
+    @flights = Flight.where(origin:origin, destination:destination).order(:date)
   end
 
 

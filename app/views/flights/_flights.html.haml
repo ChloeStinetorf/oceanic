@@ -1,12 +1,14 @@
 -if @auth.present? && (@auth.is_admin == true)
   #addflight
-    =link_to('Add Flight', new_flight_path, :remote => true, :class => 'button tiny success')
+    =link_to('Add Flight', new_flight_path, :remote => true, :class => 'button radius small info')
 -if @auth.present? && (@auth.is_admin == false)
   #searchflight
-    =link_to('Search Flights', search_flights_path, :remote => true, :class => 'button tiny success')
+    =link_to('Search Flights', search_flights_path, :remote => true, :class => 'button radius small info')
 #flight_form
-  #origins
-  #destinations
+  .row
+    .small-4.small-centered.columns
+      #origins
+      #destinations
 #flights
   %table#flight_table
     %tr

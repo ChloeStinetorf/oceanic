@@ -1,0 +1,4 @@
+%h3= "Flight #{@flight.name}  /  #{@flight.date.strftime("%B %d, %Y")}"
+%h4= "#{@flight.origin.upcase} to #{@flight.destination.upcase}"
+#seat_plan
+  = render :partial => 'seats'
