@@ -1,6 +1,8 @@
 require "spec_helper"
 require 'features/shared/login_helper'
+require 'features/shared/showpage_helper'
 include LoginHelper
+include ShowPageHelper
 
 describe "Flights" do
   describe "GET /flights as admin" do
@@ -45,6 +47,61 @@ describe "Flights" do
       page.should have_text("SYD")
       page.should have_text("LAX")
     end
+  end
+
+  describe "get /flight/:id as user" do
+    it "should bring us to the Flight show page", :js => true do
+      plane = FactoryGirl.create(:plane)
+      user = FactoryGirl.create(:user)
+      flight = FactoryGirl.create(:flight)
+      flight.plane = plane
+      flight.save
+      flight.create_seats
+      visit root_path
+      login_to_system(user)
+      page.should have_link("Search")
+      page.should have_link("Search Flights")
+      page.should have_link("A55")
+      click_link("A55")
+      page.should have_button("Purchase")
+      page.should have_text('Available')
+    end
+
+    it "should let us 'purchase' seats", :js => true do
+      showpage
+      page.should have_button("Purchase")
+      page.should have_text('Available')
+      # find('div.available').first().click
+      a= first(:css, 'div.available')
+      a.click
+      page.should have_css('.selected', :count => 1)
+      click_button("Purchase")
+      page.should have_css('.taken', :count => 1)
+    end
+  end
+
+  describe "search flights feature" do
+    it "should allow us to search flights", :js => true do
+      plane = FactoryGirl.create(:plane)
+      user = FactoryGirl.create(:user)
+      flight = FactoryGirl.create(:flight)
+      flight.plane = plane
+      flight.save
+      flight.create_seats
+      visit root_path
+      login_to_system(user)
+      click_link("Search Flights")
+      click_button("Search Destinations")
+      page.should have_text("You have selected PHL.")
+      click_button("Search Itinerary")
+      page.should have_text("A55")
+    end
+
+    # it "should let us use the fucking cancel button", :js => true do
+    #   searchpage
+    #   click_link("Cancel")
+    #   page.should_not have_button("Search Destinations")
+    # end
   end
 
 end
