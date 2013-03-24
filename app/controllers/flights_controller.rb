@@ -1,5 +1,6 @@
 class FlightsController < ApplicationController
   before_filter :check_if_admin, :only => [:new, :create]
+  before_filter :check_if_not_admin, :only => [:purchase, :search]
 
   def index
     @flights = Flight.order(:date)
