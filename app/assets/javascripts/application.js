@@ -7,3 +7,5 @@
 //= require 'home.js'
 //= require 'flights.js'
 //= require 'oceanic.js'
+//= require 'search.js'
+

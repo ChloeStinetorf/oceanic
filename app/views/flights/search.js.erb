@@ -1,1 +1,10 @@
-$('#flight_form').empty().append('<%=j render(:partial => 'search') %>');
+if($("#origins").length == 0)
+{
+  $('#origins').empty().append('<%=j render(:partial => 'search') %>');
+  var origins = $("#origins")
+  $("#flight_form").append(origins);
+}
+else
+{
+  $('#origins').empty().append('<%=j render(:partial => 'search') %>');
+}
