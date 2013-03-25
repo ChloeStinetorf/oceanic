@@ -1,5 +1,6 @@
 = form_tag '/flights/search_flights', :remote => true do
   = hidden_field_tag :origin, @origin.origin
+  = label_tag :select_destination
   = select_tag(:destination, options_from_collection_for_select(@destinations, "id", "destination"), :prompt => "Please select a destination")
   = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button tiny radius alert form_button')
   = submit_tag 'Search Itinerary', :id => 'searchf', :class => 'button tiny radius info '

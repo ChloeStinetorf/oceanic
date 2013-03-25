@@ -1,20 +1,21 @@
 %h4= @plane.name
-#plane_box
-  / .row
-  /   -@plane.aisles.times do |aisle|
-  /     / -if @plane.rows > 12
-  /     .small-1.columns
-  /       -@plane.rows.times do |row|
-  /         .row
-  /           .seat= "#{(aisle+65).chr}#{row+1}"
-  /   %div{:class => "small-#{12-@plane.aisles} columns"}
-  .row
-    .small-12.columns
-      %table
+.row
+  .small-12.columns
+    #plane_box
+      %table#plane_table
+        %tr#tr
+          %th
+          -@plane.rows.times do |row|
+            %td= row+1
         -@plane.aisles.times do |aisle|
           %tr
+            %th#th= (aisle+65).chr
+            -@plane.rows.times do |row|
+              %td.available= "#{(aisle+65).chr}#{row+1}"
+        %tr#tr
+          %th
           -@plane.rows.times do |row|
-            %td= "#{(aisle+65).chr}#{row+1}"
+            %td= row
 
 
     //Aisles correspond to columns. so 3 aisles and foundations shows 3 colmn div. another 9 column div creates. w/in your 3-column div, in each column you have a row, which corresponds to a seat.
