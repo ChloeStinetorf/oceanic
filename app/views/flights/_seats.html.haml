@@ -7,25 +7,15 @@
       %table
         - i=0
         - seats = @flight.seats.order(:id)
-        %tr#tr
-          %th
-          -@flight.plane.rows.times do |row|
-            %td= row+1
         -@flight.plane.aisles.times do |aisle|
           %tr
-            %th#th= (aisle+65).chr
+            %td= (aisle+65).chr
             -@flight.plane.rows.times do |row|
               %td
                 -if seats[i].user.nil?
-                  .available
-                    = "Available"
-                    = "#{(aisle+65).chr}#{row+1}"
+                  .available= "Available"
                 -else
                   .taken= "#{seats[i].user.name.split[0]}"
                 %div.seatsids= seats[i].id
                 -i+=1
-        %tr#tr
-          %th
-          -@flight.plane.rows.times do |row|
-            %td= row
     = button_to("Purchase","#", :id => "purchase_btn", :class => 'button tiny radius alert')
