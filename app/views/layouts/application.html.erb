@@ -13,9 +13,14 @@
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 <body>
-  <div id='nav'><%= render :partial => 'layouts/nav' %></div>
-  <div id='body'><%= render :partial => 'layouts/body' %></div>
-  <div id='footer'><%= render :partial => 'layouts/footer' %></div>
+  <div class="row">
+    <div class="small-12 columns" id="container">
+      <div id='nav'><%= render :partial => 'layouts/nav' %></div>
+      <div id='body'><%= render :partial => 'layouts/body' %></div>
+      <div id='footer'><%= render :partial => 'layouts/footer' %></div>
+    </div>
+  </div>
+
 
   <script>
   $(document).foundation();

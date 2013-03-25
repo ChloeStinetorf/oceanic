@@ -1,7 +1,7 @@
-<% if @user.present? %>
-  $('#form').empty();
+<% if @user.valid? %>
+  $('#reg_form').effect("fold", 1000);
   $('#nav').empty();
   $('#nav').append('<%=j render :partial => 'layouts/nav' %>')
 <% else %>
-  $('#form').empty().append('<%=j render(:partial => 'form') %>');
+  $('#reg_form').effect("bounce", 300);
 <% end %>

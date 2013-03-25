@@ -33,4 +33,5 @@ describe "Planes" do
       page.should have_text("A 787")
     end
   end
+
 end
