@@ -19,4 +19,6 @@ FactoryGirl.define do
     origin 'PHL'
     date '2013-03-03'
   end
+
+
 end

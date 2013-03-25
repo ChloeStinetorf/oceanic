@@ -13,12 +13,12 @@ describe 'Users' do
     it 'creates a new user', :js => true do
       visit root_path
       click_link('Register')
-      fill_in('Name', :with => 'Bob')
-      fill_in('Email', :with => 'bob@gmail.com')
+      fill_in('user_name', :with => 'Bob')
+      fill_in('user_email', :with => 'bob@gmail.com')
       fill_in('user_password', :with => 'a')
       fill_in('user_password_confirmation', :with => 'a')
-      click_button('Get LOST')
-      page.should_not have_button('Get LOST')
+      click_button('Create Account')
+      page.should_not have_content('Create Account')
       expect(User.first.name).to eq 'Bob'
     end
   end
@@ -29,7 +29,7 @@ describe 'Users' do
       visit root_path
       click_link('Register')
       click_link('Cancel')
-      page.should_not have_button('Get LOST')
+      page.should_not have_content('Create Account')
     end
   end
 end

@@ -1,0 +1,9 @@
+-@planes.each do |plane|
+  .row
+    .small-12.columns
+      %h3= plane.name
+  .row
+    .small-11.small-offset-1.columns
+      %h5= "Rows: #{plane.rows}"
+      %h5= "Aisles: #{plane.aisles}"
+      %h5= "Total Seats: #{plane.rows * plane.aisles}"

@@ -141,11 +141,6 @@ td {
   padding-top: 2px;
 }
 
-#drop1 {
-  #form {
-    width: 170px;
-  }
-}
 
 #th {
   position: absolute;
@@ -161,5 +156,15 @@ td {
   td {
     height: 20px;
   }
+}
 
+#reg_form {
+  position: absolute;
+  top: -51px;
+  z-index: 1;
+  background: white;
+  border: 1px solid #B63C89;
+  border-radius: 5px;
+  padding: 15px;
+  width: 211px;
 }

@@ -11,7 +11,7 @@
       = f.text_field :destination
       = f.label :plane
       = select_tag(:plane, options_from_collection_for_select(@planes, "id", "name"))
-      = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button small radius alert form_button')
+      = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button small radius alert form_button', :id => "cancel_create")
       = f.submit 'Create Flight', :class => 'button small radius info form_button'
 
 

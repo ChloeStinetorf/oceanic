@@ -15,3 +15,5 @@ p4 = Plane.create(:name => 'Sukhoi Superjet-100', :rows => 50, :aisles => 8)
 
 
 
+
+

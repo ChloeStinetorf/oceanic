@@ -1,9 +1,9 @@
-<% if session[:user_id].present? %>
-  $('#login_form').empty();
+<% if @auth.present? %>
   $('#nav').empty();
   $('#nav').append('<%=j render :partial => 'layouts/nav' %>');
   $('#flight_whole').empty().append('<%= j render(:partial => 'flights/flights') %>');
+  $('#reg_form').hide("fold", 1000);
 <% else %>
-  $('#login_form').effect("bounce", 300)
+  $('#reg_form').effect("bounce", 300)
 <% end %>
 
