@@ -18,6 +18,7 @@ FactoryGirl.define do
     destination 'JFK'
     origin 'PHL'
     date '2013-03-03'
+    plane {FactoryGirl.create(:plane)}
   end
 
 

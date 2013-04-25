@@ -7,9 +7,9 @@ include ShowPageHelper
 describe "Flights" do
   describe "GET /flights as admin" do
     it "should have add flight button", :js => true do
-      plane = FactoryGirl.create(:plane)
-      flight = FactoryGirl.create(:flight)
-      plane.flights << flight
+      # plane = FactoryGirl.create(:plane)
+      # flight = FactoryGirl.create(:flight)
+      # plane.flights << flight
       admin = FactoryGirl.create(:admin)
       visit flights_path
       login_to_system(admin)
