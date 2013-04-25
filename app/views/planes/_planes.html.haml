@@ -10,12 +10,26 @@
   /   %div{:class => "small-#{12-@plane.aisles} columns"}
   .row
     .small-12.columns
+      / %table
+      /   -@plane.aisles.times do |aisle|
+      /     %tr
+      /     -@plane.rows.times do |row|
+      /       %td= "#{(aisle+65).chr}#{row+1}"
+
       %table
+        %tr#tr2
+          %th
+          -@plane.rows.times do |row|
+            %td= row+1
         -@plane.aisles.times do |aisle|
           %tr
+            %th#th2= (aisle+65).chr
+            -@plane.rows.times do |row|
+              %td= "#{(aisle+65).chr}#{row+1}"
+        %tr#tr2
+          %th
           -@plane.rows.times do |row|
-            %td= "#{(aisle+65).chr}#{row+1}"
-
+            %td= row
 
     //Aisles correspond to columns. so 3 aisles and foundations shows 3 colmn div. another 9 column div creates. w/in your 3-column div, in each column you have a row, which corresponds to a seat.
     //thus you get the seat (which is its own div w/ class .seat) labeled.

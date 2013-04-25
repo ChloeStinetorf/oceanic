@@ -7,5 +7,6 @@ class Home
     e.preventDefault()
     $('#plane_form').empty()
     $('#flight_form').empty()
+    $("#addplane").show()
 
 $(document).ready(Home.document_ready)
