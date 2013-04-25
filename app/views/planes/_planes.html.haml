@@ -10,12 +10,6 @@
   /   %div{:class => "small-#{12-@plane.aisles} columns"}
   .row
     .small-12.columns
-      / %table
-      /   -@plane.aisles.times do |aisle|
-      /     %tr
-      /     -@plane.rows.times do |row|
-      /       %td= "#{(aisle+65).chr}#{row+1}"
-
       %table
         %tr#tr2
           %th
